@@ -3,11 +3,13 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "sst bind astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sst:deploy": "sst deploy",
+    "sst:dev": "sst dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
@@ -15,5 +17,11 @@
     "astro": "^4.2.1",
     "solid-js": "^1.8.11",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "sst": "^2.39.6",
+    "aws-cdk-lib": "2.110.1",
+    "constructs": "10.3.0",
+    "astro-sst": "^2.39.6"
   }
 }
