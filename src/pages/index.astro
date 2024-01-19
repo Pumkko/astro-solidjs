@@ -1,5 +1,6 @@
 ---
-
+import Counter from '../components/Counter'
+import CharacterName from '../components/CharacterName'
 ---
 
 <html lang="en">
@@ -12,5 +13,7 @@
 	</head>
 	<body>
 		<h1>Astro</h1>
+		<Counter client:only/>
+		<CharacterName/>
 	</body>
 </html>
