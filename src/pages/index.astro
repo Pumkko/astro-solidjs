@@ -1,6 +1,7 @@
 ---
-import Counter from '../components/Counter'
-import CharacterName from '../components/CharacterName'
+import Counter from "../components/Counter";
+import CharacterName from "../components/CharacterName";
+
 ---
 
 <html lang="en">
@@ -9,11 +10,12 @@ import CharacterName from '../components/CharacterName'
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<script src="https://unpkg.com/htmx.org@1.9.10"></script>
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
-		<Counter client:idle/>
-		<CharacterName/>
+		<Counter client:idle />
+		<CharacterName />
+		<button hx-get="/clicked" hx-swap="outerHTML"> Click Me</button>
 	</body>
 </html>
