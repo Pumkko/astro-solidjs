@@ -1,10 +1,8 @@
 ---
-import Counter from "../components/Counter";
-import CharacterName from "../components/CharacterName";
-
+export const prerender = true;
 ---
 
-<html lang="en">
+<html lang="en" id="html">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,9 +11,11 @@ import CharacterName from "../components/CharacterName";
 		<script src="https://unpkg.com/htmx.org@1.9.10"></script>
 		<title>Astro</title>
 	</head>
-	<body>
-		<Counter client:idle />
-		<CharacterName />
-		<button hx-get="/clicked" hx-swap="outerHTML"> Click Me</button>
+	<body hx-boost="true" hx-target="#container">
+		<a href="/Counter" hx-push-url="true">Counter</a>
+		<a href="/Character" hx-push-url="true">Character</a>
+		<a href="/" hx-push-url="true" hx-select="#container">Home</a>
+
+		<main id="container">Container</main>
 	</body>
 </html>
