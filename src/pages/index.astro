@@ -1,21 +1,7 @@
 ---
-export const prerender = true;
+import SiteLayout from '../layouts/SiteLayout.astro'
+
 ---
-
-<html lang="en" id="html">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<script src="https://unpkg.com/htmx.org@1.9.10"></script>
-		<title>Astro</title>
-	</head>
-	<body hx-boost="true" hx-target="#container">
-		<a href="/Counter" hx-push-url="true">Counter</a>
-		<a href="/Character" hx-push-url="true">Character</a>
-		<a href="/" hx-push-url="true" hx-select="#container">Home</a>
-
-		<main id="container">Container</main>
-	</body>
-</html>
+<SiteLayout>
+  <p>My page content, wrapped in a layout!</p>
+</SiteLayout>
